@@ -1,0 +1,269 @@
+//Colors 
+$red: #dc3545;
+$blue: #24324a;
+$white: #dff2e4;
+$black: #212529;
+
+
+//Properties of elements in main view
+
+body {
+    background-color: #f2f0f0;
+    overflow-x: hidden;
+    font-family: 'K2D', sans-serif;
+  }
+
+
+.box {
+    display: grid;
+    height: 300vh;
+    grid-template-columns: 0.6fr 1.4fr 1fr 1fr;
+    grid-template-rows: 0.18fr 0.4fr 1.2fr 1.2fr 0.3fr;
+    grid-gap: 0px, 0px, 1px;
+    grid-template-areas: "sidebar nav nav nav"
+    "sidebar first first first"
+    "sidebar content1 content1 content1"
+    "sidebar content2 content2 content2"
+    "sidebar footer footer footer";
+}
+
+.navbar {
+    grid-area: nav;
+    display: flex;
+    color: $white;
+    background-color: $blue;
+    z-index: 1;
+    
+}
+
+  .navbar_links ul {
+    margin: 0;
+    padding: 0;
+  }
+  
+  .navbar_links li {
+    list-style: none;
+    display: flex;
+    height: 9vh;
+    width: 95vw;
+    align-items: center;
+    justify-content: flex-end;
+  } 
+  
+  .navbar_links li a {
+    text-decoration: none;
+    color: $white;
+    padding-right: 1rem;
+  }
+  
+  .toggle_button {
+    position: absolute;
+    top: 0.75rem;
+    right: 1rem;
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 30px;
+    height: 21px;
+  }
+  
+  .toggle_button .bar {
+    height: 3px;
+    width: 100%;
+    background-color: $white;
+    border-radius: 10px;
+  }
+
+  .colored {
+    background-color: $red;
+  }
+  
+#first {
+    grid-area: first;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+#sidebar {
+    grid-area: sidebar;
+    position: fixed;
+    z-index: 2;
+    background-color: $black; 
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    width: 15%;
+    height: 100%;
+}
+
+.sidepart {
+  color: #b8c7ce;
+  padding-top: 7rem;
+  padding-left: 2rem;
+}
+
+ .sidepart a {
+   text-decoration: none;
+   color: #7e888c;
+ }
+
+.sidepart2 {
+  color: #b8c7ce;
+  padding-top: 3rem;
+  padding-left: 2rem;
+}
+
+.sidepart2 a {
+  text-decoration: none;
+  color: #7e888c;
+}
+
+
+.sidepart3 {
+  color: #b8c7ce;
+  padding-top: 3rem;
+  padding-left: 2rem;
+}
+
+.sidepart3 a {
+  text-decoration: none;
+  color: #7e888c;
+}
+
+.find {
+  color: $white;
+  position: fixed;
+  padding: 8px;
+}
+
+#content1 {
+    grid-area: content1;
+    padding: 1.5rem;
+   
+}
+
+.content-box {
+  background-color: blue;
+  height: 100%;
+  width: 100%;
+  background-color: #ffffff;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  padding: 1.7rem;
+}
+
+.type_status {
+  display: flex;
+}
+
+.price_area_rooms {
+  display: flex;
+  justify-content: space-between;
+}
+
+.next_back {
+  display: flex;
+  justify-content: space-between;
+}
+
+.next_prev_btn {
+  border-radius: 3%;
+  height: 3rem;
+  width: 11rem;
+  border: none;
+  background-color: $red;
+  color: $white;
+}
+
+.next_prev_btn:hover {
+  background-color: $white;
+  color: $red;
+}
+
+#content2 {
+    grid-area: content2;  
+    padding: 1.5rem;
+}
+
+.state_city {
+  display: flex;
+  justify-content: space-between;
+}
+
+footer { 
+    grid-area: footer;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+
+
+ //Properties of elements in mobile view
+  
+ @media only screen and (max-width: 768px) { 
+  .toggle_button {
+    display: flex;
+  }
+
+  .navbar_links {
+    display: none; 
+  }
+
+  .navbar {
+    align-items: flex-start;
+    height: 10vh;
+    width: 100%;
+  }
+
+  .wide {
+    height: 30vh;
+  }
+
+  .navbar_links ul {
+    flex-direction: column;
+  }
+
+  .navbar_links li {
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+   
+  }
+
+  .navbar_links.active {
+    display: flex;
+    
+  }
+
+  .navbar_links li a {
+      text-decoration: none;
+      color: $white;
+      padding: 1rem;
+      display: flex;
+    }
+
+    .box {
+      display: grid;
+      height: 300vh;
+      grid-template-columns: 0.6fr 1.4fr 1fr 1fr;
+      grid-template-rows: 0.18fr 0.4fr 1.2fr 1.2fr 0.3fr;
+      grid-gap: 0px, 0px, 1px;
+      grid-template-areas: "nav nav nav nav"
+      "first first first first"
+      "content1 content1 content1 content1"
+      "content2 content2 content2 content2"
+      "footer footer footer footer";
+  }
+}
+
+  
+@media only screen and (max-width: 1200px) { 
+  #sidebar {
+    display: none;
+  }
+}
