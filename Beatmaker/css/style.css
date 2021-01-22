@@ -1,0 +1,148 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto Condensed', sans-serif;
+    font-size: 0.85rem;
+}
+
+i,
+svg {
+    pointer-events: none;
+}
+
+.kick-pad,
+.snare-pad,
+.hihat-pad {
+    width: 5rem;
+    height: 5rem;
+    margin: 1rem 0.5rem;
+    cursor: pointer;
+}
+
+.kick-pad {
+    background-color: #4389bf;
+}
+
+.snare-pad {
+    background-color: #d61522;
+}
+
+.hihat-pad {
+    background-color: #f0421f;
+}
+
+.kick-pad.active {
+    background-color: #1a6197;
+}
+
+.snare-pad.active {
+    background-color: #af0f1a;
+}
+
+.hihat-pad.active {
+    background-color: #c02c0f;
+}
+
+
+
+.sequencer {
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.hihat-track,
+.snare-track,
+.kick-track {
+    display: flex;
+    align-items: center;
+    width: 85%;
+    justify-content: space-between;
+    margin-top: 5rem;
+}
+
+.kick,
+.snare,
+.hihat {
+    display: flex;
+}
+
+.controls {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex: 1;
+    margin: 0rem 2rem;
+}
+
+.controls button {
+    padding: 0.9rem;
+    border: none;
+    background: #8a8c89;
+    color: white;
+    font-size: 1rem;
+    border-radius: 3px;
+    cursor: pointer;
+    transition: all 0.5 ease;
+}
+
+.pad {
+    transition: all 0.5s ease;
+}
+
+.play {
+    padding: 1rem 2rem;
+    font-size: 1.2rem;
+    background: #097a47;
+    color: white;
+    border: none;
+    cursor: pointer;
+    margin-top: 0.8rem;
+    margin-bottom: 0.8rem;
+}
+
+select {
+    padding: 0.8rem;
+    font-size: 1rem;
+}
+
+
+.mute.active {
+    background: #464746;
+}
+
+.tempo {
+    margin: 3rem;
+    width: 30%;
+}
+
+.tempo-slider {
+    padding: 1rem;
+
+    margin: 1rem 0rem;
+    width: 100%;
+    position: relative;
+    cursor: pointer;
+}
+
+.tempo p {
+    font-size: 1.2rem;
+    font-weight: bold;
+    text-align: center;
+}
+
+@keyframes playTrack {
+    from {
+        transform: scale(1);
+    }
+
+    to {
+        transform: scale(1.2);
+    }
+}
