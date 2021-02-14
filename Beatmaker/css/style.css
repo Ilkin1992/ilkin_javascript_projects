@@ -109,6 +109,10 @@ svg {
     border-radius: 5px;
 }
 
+.cancel_choose {
+    background-color: rgb(88, 86, 86);
+}
+
 .tempo {
     margin: 3rem;
     width: 30%;
@@ -129,6 +133,8 @@ select {
     padding: 0.8rem;
     font-size: 1rem;
 }
+
+
 
 
 .play {

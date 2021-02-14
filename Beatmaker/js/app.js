@@ -133,22 +133,26 @@ class Drumkit {
         const kickPad = document.querySelectorAll('.kick_pad')
         const snarePad = document.querySelectorAll('.snare_pad')
         const hihatPad = document.querySelectorAll('.hihat_pad')
+        
         switch (indicator) {
             case '0':
             kickPad.forEach(pad => {
-                pad.classList.toggle('active');
-            })
+                pad.classList.toggle('active');        
+            });
+            e.target.classList.toggle('cancel_choose');
                 break;
             case '1':
                 snarePad.forEach(pad => {
                     pad.classList.toggle('active');
-                }) 
+                });
+                e.target.classList.toggle('cancel_choose');
                 break;
             case '2':
                 hihatPad.forEach(pad => {
-                    pad.classList.toggle('active');
-                })  
-        }
+                    pad.classList.toggle('active');         
+                }); 
+                e.target.classList.toggle('cancel_choose');
+        }      
     };
 }
 
