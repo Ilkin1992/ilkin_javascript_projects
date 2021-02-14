@@ -5,16 +5,19 @@ class Drumkit {
         this.currentKick = './sounds/kick-classic.wav';
         this.currentSnare = './sounds/snare-acoustic01.wav';
         this.currentHihat = './sounds/hihat-acoustic01.wav';
-        this.kickAudio = document.querySelector('.kick-sound');
-        this.snareAudio = document.querySelector('.snare-sound');
-        this.hihatAudio = document.querySelector('.hihat-sound');
+        this.kickAudio = document.querySelector('.kick_sound');
+        this.snareAudio = document.querySelector('.snare_sound');
+        this.hihatAudio = document.querySelector('.hihat_sound');
         this.index = 0;
-        this.bpm = 250;
+        this.bpm = 120;
         this.isPlaying = null;
         this.selects = document.querySelectorAll('select');
         this.muteBtns = document.querySelectorAll('.mute');
-        this.tempoSlider = document.querySelector('.tempo-slider');
+        this.tempoSlider = document.querySelector('.tempo_slider');
+        this.chooseAllButtons = document.querySelectorAll('.choose');
     }
+
+  
 
     activePad() {
         this.classList.toggle('active');
@@ -25,153 +28,172 @@ class Drumkit {
         const activeBars = document.querySelectorAll(`.b${step}`);
         //Loop over the pads
         activeBars.forEach(bar => {
-        bar.style.animation = `playTrack 0.3s alternate ease-in-out 2`;
-        //Check if pads are active 
-        if(bar.classList.contains('active')) {
-        //Check each sound
-        if (bar.classList.contains('kick-pad')) {
-            this.kickAudio.currentTime = 0;
-            this.kickAudio.play();
-        }
-        if (bar.classList.contains('snare-pad')) {
-            this.snareAudio.currentTime = 0;
-            this.snareAudio.play();
-        }
-        if (bar.classList.contains('hihat-pad')) {
-            this.hihatAudio.currentTime = 0;
-            this.hihatAudio.play();
-        }
-        };
-        });
-        
-        this.index++;
-        
+            bar.style.animation = `playTrack 0.3s alternate ease-in-out 2`;
+            //Adding sounds 
+            if (bar.classList.contains('active')) {
+                if (bar.classList.contains('kick_pad')) {
+                    this.kickAudio.currentTime = 0;
+                    this.kickAudio.play();
+                }
+                if (bar.classList.contains('snare_pad')) {
+                    this.snareAudio.currentTime = 0;
+                    this.snareAudio.play();
+                }
+                if (bar.classList.contains('hihat_pad')) {
+                    this.hihatAudio.currentTime = 0;
+                    this.hihatAudio.play();
+                }
+            }
+        })
+        this.index++;   
     }
+
     start() {
         const interval = (60/this.bpm) * 1000;
-        //Clear the interval    
-        if (this.isPlaying) {
-            clearInterval(this.isPlaying);
-            console.log(this.isPlaying);
-            this.isPlaying = null;
-        } else {
-          
-            this.isPlaying = setInterval(() => {
+        if (!this.isPlaying) {
+            this.isPlaying = setInterval( ()=> {
                 this.repeat();
-            }, interval);
+                },interval)
+        } else {
+            clearInterval(this.isPlaying);
+            this.isPlaying = null;
         }
     }
-   updateBtn() {
-       if(!this.isPlaying) {
-           this.playBtn.innerText = 'Stop';
-           this.playBtn.classList.add('active');
-       } else {
-        this.playBtn.innerText = 'Play';
-        this.playBtn.classList.remove('active');
+
+    updateBtn() {
+        if (!this.isPlaying) {
+            this.playBtn.innerText = 'Stop';
+            this.playBtn.classList.add('stop');
+        } else {
+            this.playBtn.innerText = 'Play';
+            this.playBtn.classList.remove('stop');
+        }
+    }
+    
+    changeSound(e) {
+    this.selectionName = e.target.name;
+    this.selectionValue = e.target.value;
+    switch (this.selectionName) {
+        case 'kick_select':
+        this.kickAudio.src = this.selectionValue;
+        break;
+        case 'snare_select':
+            this.snareAudio.src = this.selectionValue;
+            break;
+        case 'hihat_select':
+            this.hihatAudio.src = this.selectionValue;
        }
-   }
-   changeSound(e) {
-       console.log(e);
-       const selectionName = e.target.name;
-       const selectionValue = e.target.value;
-       switch(selectionName) {
-           case 'kick-select':
-               this.kickAudio.src = selectionValue;
-               break;
-           case 'snare-select':
-               this.snareAudio.src = selectionValue;
-               break;
-           case 'hihat-select':
-               this.hihatAudio.src = selectionValue;
-               break;
-       }
-   }
-   mute(e) {
-       const muteIndex = e.target.getAttribute('data-track');
-       e.target.classList.toggle('active');
-      
-       if (e.target.classList.contains('active')) {
-           switch(muteIndex) {
-               case '0':
-                   this.kickAudio.volume = 0;
-                   break;
-               case '1':
-                   this.snareAudio.volume = 0;
-                   break;
-               case '2':
-                   this.hihatAudio.volume = 0;
-                   break;
-           }
-       } else {
-           switch(muteIndex) {
-            case '0':
+    }
+
+    mute(e) {
+        const muteIndex = e.target.getAttribute('data-track');
+        e.target.classList.toggle('mute2');
+        if (e.target.classList.contains('mute2')) {
+            switch (muteIndex) {
+                case "0": 
+                this.kickAudio.volume = 0;
+                break;
+                case "1":
+                this.snareAudio.volume = 0;
+                break;
+                case "2":
+                this.hihatAudio.volume = 0;
+            }
+        }  else {
+            switch (muteIndex) {
+                case "0": 
                 this.kickAudio.volume = 1;
                 break;
-            case '1':
+                case "1":
                 this.snareAudio.volume = 1;
                 break;
-            case '2':
+                case "2":
                 this.hihatAudio.volume = 1;
+            }
+        }    
+    }   
+
+    changeTempo(e) {
+        const tempoText = document.querySelector('.tempo_number');
+        this.bpm = e.target.value;
+        tempoText.innerText = e.target.value;
+    }
+
+    updateTempo() {
+        clearInterval(this.isPlaying);
+        this.isPlaying = null;
+        const playBtn = document.querySelector('.play');
+        if (playBtn.classList.contains('stop')) {
+            this.start();
+        }  
+    }
+    
+    selectAll(e) {
+        const indicator = e.target.getAttribute('data-track');
+        const kickPad = document.querySelectorAll('.kick_pad')
+        const snarePad = document.querySelectorAll('.snare_pad')
+        const hihatPad = document.querySelectorAll('.hihat_pad')
+        switch (indicator) {
+            case '0':
+            kickPad.forEach(pad => {
+                pad.classList.toggle('active');
+            })
                 break;
-           }
-       }
-   }
-   changeTempo(e) {
-       const tempoText = document.querySelector('.tempo-nr');
-     
-       tempoText.innerText = e.target.value;
-   }
-   updateTempo(e) {
-    this.bpm = e.target.value;
-   clearInterval(this.isPlaying);
-   this.isPlaying = null;
-   const playBtn = document.querySelector('.play');
-   if (playBtn.classList.contains('active')) {
-       this.start();
-   }
-   }
+            case '1':
+                snarePad.forEach(pad => {
+                    pad.classList.toggle('active');
+                }) 
+                break;
+            case '2':
+                hihatPad.forEach(pad => {
+                    pad.classList.toggle('active');
+                })  
+        }
+    };
 }
 
-const drumKit = new Drumkit();
+const drumkit = new Drumkit();
 
+//Event listeners
 
-//Event listeners 
+drumkit.pads.forEach(pad => {
+    pad.addEventListener('click', drumkit.activePad);
+    pad.addEventListener('animationend', function() {
+        this.style.animation = "";
+    })
+    });
+    
+    
+drumkit.playBtn.addEventListener('click', function() {
+drumkit.updateBtn()
+drumkit.start()
+});
 
-
-
-drumKit.pads.forEach(pad => {
-    pad.addEventListener('click', drumKit.activePad);
-    pad.addEventListener('animationend', function(){
-    this.style.animation = '';
+drumkit.selects.forEach(select => {
+    select.addEventListener('change', function(e){
+    drumkit.changeSound(e)
     });
 });
 
-drumKit.playBtn.addEventListener('click', function(){
-    drumKit.updateBtn();
-  drumKit.start();
+drumkit.muteBtns.forEach(btn => {
+    btn.addEventListener('click', function(e){
+    drumkit.mute(e);
+    });
+});
 
-}); 
+drumkit.tempoSlider.addEventListener('input', function(e) {
+    drumkit.changeTempo(e);
+});
 
+drumkit.tempoSlider.addEventListener('change', function(e) {
+    drumkit.updateTempo(e);
+});
 
-drumKit.selects.forEach(select => {
-select.addEventListener('change', function(e) {
-drumKit.changeSound(e);
+drumkit.chooseAllButtons.forEach(button => {
+button.addEventListener('click', function(e) {
+drumkit.selectAll(e);
 });
 });
 
-drumKit.muteBtns.forEach(btn => {
- btn.addEventListener('click', function(e) {
-     drumKit.mute(e);
- });
-});
-
-
-drumKit.tempoSlider.addEventListener('input', function(e){
-drumKit.changeTempo(e);
-});
-
-drumKit.tempoSlider.addEventListener('change', function(e){
-drumKit.updateTempo(e);
-});
 
 

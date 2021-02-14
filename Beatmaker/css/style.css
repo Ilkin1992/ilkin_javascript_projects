@@ -1,53 +1,16 @@
 * {
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
 }
 
 body {
-    font-family: 'Roboto Condensed', sans-serif;
-    font-size: 0.85rem;
+    font-family: 'Source Sans Pro', sans-serif;
 }
 
 i,
 svg {
     pointer-events: none;
 }
-
-.kick-pad,
-.snare-pad,
-.hihat-pad {
-    width: 5rem;
-    height: 5rem;
-    margin: 1rem 0.5rem;
-    cursor: pointer;
-}
-
-.kick-pad {
-    background-color: #4389bf;
-}
-
-.snare-pad {
-    background-color: #d61522;
-}
-
-.hihat-pad {
-    background-color: #f0421f;
-}
-
-.kick-pad.active {
-    background-color: #1a6197;
-}
-
-.snare-pad.active {
-    background-color: #af0f1a;
-}
-
-.hihat-pad.active {
-    background-color: #c02c0f;
-}
-
-
 
 .sequencer {
     display: flex;
@@ -57,14 +20,54 @@ svg {
     justify-content: center;
 }
 
-.hihat-track,
-.snare-track,
-.kick-track {
+
+.kick_pad,
+.snare_pad,
+.hihat_pad {
+    width: 5rem;
+    height: 5rem;
+    margin: 1rem 0.5rem;
+    cursor: pointer;
+}
+
+.kick_pad {
+    background-color: #203db0;
+}
+
+.snare_pad {
+    background-color: #a60c16;
+}
+
+.hihat_pad {
+    background-color: #a14e1f;
+}
+
+
+.pad {
+    transition: all 0.5s ease;
+}
+
+
+.kick_pad.active {
+    background-color: #0a2488;
+}
+
+.snare_pad.active {
+    background-color: #92060f;
+}
+
+.hihat_pad.active {
+    background-color: #7c360d;
+}
+
+.kick_track,
+.snare_track,
+.hihat_track {
     display: flex;
     align-items: center;
-    width: 85%;
+    width: 90%;
     justify-content: space-between;
-    margin-top: 5rem;
+    margin-top: 2.5rem;
 }
 
 .kick,
@@ -81,40 +84,29 @@ svg {
     margin: 0rem 2rem;
 }
 
-.controls button {
+.mute {
     padding: 0.9rem;
     border: none;
-    background: #8a8c89;
-    color: white;
-    font-size: 1rem;
-    border-radius: 3px;
+    background-color: #cccfc8;
+    font-size: 0.9rem;
     cursor: pointer;
-    transition: all 0.5 ease;
-}
-
-.pad {
     transition: all 0.5s ease;
 }
 
-.play {
-    padding: 1rem 2rem;
-    font-size: 1.2rem;
-    background: #097a47;
-    color: white;
-    border: none;
-    cursor: pointer;
-    margin-top: 0.8rem;
-    margin-bottom: 0.8rem;
+.mute2 {
+    background-color: #535352;
 }
 
-select {
-    padding: 0.8rem;
+.active {
+    background-color: #6c7068;
+}
+
+.choose {
+    width: 5rem;
+    height: 3rem;
     font-size: 1rem;
-}
-
-
-.mute.active {
-    background: #464746;
+    font-weight: 600;
+    border-radius: 5px;
 }
 
 .tempo {
@@ -122,20 +114,39 @@ select {
     width: 30%;
 }
 
-.tempo-slider {
+.tempo_slider {
     padding: 1rem;
-
-    margin: 1rem 0rem;
     width: 100%;
-    position: relative;
-    cursor: pointer;
 }
 
 .tempo p {
-    font-size: 1.2rem;
-    font-weight: bold;
     text-align: center;
+    font-size: 1.4rem;
 }
+
+
+select {
+    padding: 0.8rem;
+    font-size: 1rem;
+}
+
+
+.play {
+    padding: 1rem 3rem;
+    font-size: 1.2rem;
+    margin-top: 1rem;
+    color: white;
+    background-color: #2dbd54;
+    border: none;
+    cursor: pointer;
+}
+
+.stop {
+    background-color: #92060f;
+}
+
+
+
 
 @keyframes playTrack {
     from {
@@ -145,4 +156,33 @@ select {
     to {
         transform: scale(1.2);
     }
+
+}
+
+
+
+@media only screen and (max-width: 600px) {
+
+    .kick_track,
+    .snare_track,
+    .hihat_track {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 90%;
+        justify-content: space-between;
+        margin-top: 2.5rem;
+    }
+
+    .kick,
+    .snare,
+    .hihat {
+        display: flex;
+        width: 70%;
+    }
+
+    .controls {
+        display: block;
+    }
+
 }
