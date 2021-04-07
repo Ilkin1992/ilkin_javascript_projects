@@ -1,130 +1,69 @@
-const game = function() {
-    let pScore = 0;
-    let cScore = 0;
-
-    //start the game!
-
-    const startGame = function() {
-        const playBtn = document.querySelector('.intro button');
-        const introScreen = document.querySelector('.intro');
-        const match = document.querySelector('.match');
-       
-       
-
-        playBtn.addEventListener('click', function() {
-            introScreen.classList.add('fadeOut');
-            match.classList.add('fadeIn');
-        }) 
-    };
-
-    //gameplay 
-
-    const playMatch = function() {
-        const options = document.querySelectorAll('.options button');
-        const playerHand = document.querySelector('.player_hand');
-        const computerHand = document.querySelector('.computer_hand');
-        const hands = document.querySelectorAll('.hands img');
-
-        hands.forEach(hand => {
-            hand.addEventListener('animationend', function(){
-            this.style.animation = '';
-            });
-        })
-        //Computer Options 
-        const computerOptions = ['rock', 'paper', 'scissors'];
-
-        options.forEach(option=> {
-        option.addEventListener('click', function(){
-            //computer choice
-        const computerNumber = Math.floor(Math.random() * 3);
-        const computerChoice = computerOptions[computerNumber];
-        //Here is where we call compare hands
-        
-        compareHands(this.textContent, computerChoice);
-
-        //Update images 
-        playerHand.src = `./images/${this.textContent}.png`;
-        computerHand.src = `./images/${computerChoice}.png`;
-        
-        playerHand.style.animation = "shakePlayer 2s ease";
-        computerHand.style.animation = "shakeComputer 2s ease";
-
-        });
-        });   
-    };
-   
-    const updateScore = () => {
-        const playerScore = document.querySelector('.player_score p');
-        const computerScore = document.querySelector('.computer_score p');
-        playerScore.textContent = pScore;
-        computerScore.textContent = cScore;
-    }
-
-   
-    const compareHands = (playerChoice, computerChoice) => {
-        //Update Text
-        const winner = document.querySelector('.winner');
-        //Checking for a tie
-     if (playerChoice === computerChoice) {
-     winner.textContent = 'It is a tie!';
-     return;
-     }
-    //Check for Rock
-
-    if (playerChoice === 'rock') {
-        if (computerChoice === 'scissors') {
-            winner.textContent = 'Player Wins'
-            pScore++;
-            updateScore();
-            return;
-        } else {
-            winner.textContent = 'Computer Wins';
-            cScore++;
-            updateScore();
-            return;
-        }
-    }
-    //Check for paper 
-
-    if (playerChoice === 'paper') {
-        if (computerChoice === 'scissors') {
-            winner.textContent = 'Computer Wins'
-            cScore++;
-            updateScore();
-            return;
-        } else {
-            winner.textContent = 'Player Wins';
-            pScore++;
-            updateScore();
-            return;
-        }
-    }
-
-     //Check for scissors 
-
-     if (playerChoice === 'scissors') {
-        if (computerChoice === 'rock') {
-            winner.textContent = 'Computer Wins'
-            cScore++;
-            updateScore();
-            return;
-        } else {
-            winner.textContent = 'Player Wins';
-            pScore++;
-            updateScore();
-            return;
-        }
-    }
-
-
-    }
-
-
-    //call inner functions 
-    startGame();
-    playMatch();
-};
+//Variables
+const letUsPlay = document.querySelector('.let_us_play');
+const playBtn = document.querySelector('#let_us_play_btn');
+const gameBox = document.querySelector('.game_box');
+const choose = document.querySelector('.choose');
+const playerHand = document.querySelector('.player_hand');
+const playerHandImage = document.querySelector('.player_hand > img')
+const title = document.querySelector('.title');
+const playerCount = document.querySelector('.player_count');
+const computerCount = document.querySelector('.computer_count');
+///Computer Variables
+const computerHand = document.querySelector('.computer_hand');
+const computerHandImage = document.querySelector('.computer_hand > img');
 
 
 
-game();
+
+
+
+
+//Make intro disappear and actual game mode emerge
+playBtn.addEventListener('click', function(e) {
+    letUsPlay.classList.add('disappear')
+    gameBox.classList.add('emerge')
+});
+
+
+//Main game engine function
+choose.addEventListener('click', function(e) {
+
+if (e.target.id == 'rock') {
+    playerHandImage.src = './img/rock.png'
+} if (e.target.id == 'paper') {
+    playerHandImage.src = './img/paper.png'
+} if (e.target.id == 'scissors') {
+    playerHandImage.src = './img/scissors.png'
+}
+const computerOptions = ['rock','paper','scissors'];
+const computerNumber = Math.floor(Math.random() * 3)
+const computerChoice = computerOptions[computerNumber];
+computerHandImage.src = `./img/${computerChoice}.png`
+
+  if (e.target.id == 'rock' && computerChoice == 'scissors') {
+    title.innerText = 'You win!'
+    playerCount.innerText++
+} if (e.target.id == 'rock' && computerChoice == 'rock') {
+    title.innerText = 'It`s a tie!'
+} if (e.target.id == 'rock' && computerChoice == 'paper') {
+    title.innerText = 'You lose!'
+    computerCount.innerText++
+} if (e.target.id == 'paper' && computerChoice == 'rock') {
+    title.innerText = 'You win!'
+    playerCount.innerText++
+} if (e.target.id == 'paper' && computerChoice == 'paper') {
+    title.innerText = 'It`s a tie!'
+} if (e.target.id == 'paper' && computerChoice == 'scissors') {
+    title.innerText = 'You lose!'
+    computerCount.innerText++
+} if (e.target.id == 'scissors' && computerChoice == 'paper') {
+    title.innerText = 'You win!'
+    playerCount.innerText++
+} if (e.target.id == 'scissors' && computerChoice == 'scissors') {
+    title.innerText = 'It`s a tie!'
+} if (e.target.id == 'scissors' && computerChoice == 'rock') {
+    title.innerText = 'You lose!'
+    computerCount.innerText++
+} 
+
+});

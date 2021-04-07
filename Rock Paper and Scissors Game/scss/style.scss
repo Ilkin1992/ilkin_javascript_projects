@@ -1,0 +1,159 @@
+$blue: #3f5b63;
+$yellow: #d1e02d;
+$orange: #db7425;
+$green: #2ba327;
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+body {
+    background: $blue;
+    font-family: 'Londrina Solid', cursive;
+}
+
+.opening {
+    height: 10vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: $orange;
+    color: white;
+    h2 {
+        font-size: 2rem;
+    }
+    transition: 0.6s ease;
+}
+
+.opening:hover {
+    color: $orange;
+    background: white;
+}
+
+.let_us_play {
+  height: 30vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  h2 {
+      cursor: pointer;
+      color: $orange;
+      font-size: 3rem;
+  }
+}
+
+.disappear {
+    opacity: 0;
+    pointer-events: none;
+    transition: 1s ease;
+}
+
+
+.game_box {
+    height: 40vh;
+    display: flex;
+    flex-direction: column;
+    opacity: 0;
+    pointer-events: none;
+
+    .score {
+        display: flex;
+        justify-content: space-between;
+        padding: 0rem 1.5rem;
+        .player_score {
+            h1 {
+                background: $orange;
+                padding: 0.5rem;
+                color: white;
+                border: 2px solid black;
+            }
+           
+            h2 {
+                text-align: center;
+                padding-top: 0.5rem;
+                background: $orange;
+                color: white;
+                border: 2px solid black;
+            }
+        }
+
+        .computer_score {
+            h1 {
+                background: brown;
+                padding: 0.5rem;
+                color: white;
+                border: 2px solid black;
+            }
+           
+            h2 {
+                text-align: center;
+                padding-top: 0.5rem;
+                background: brown;
+                color: white;
+                border: 2px solid black;
+            }
+        }
+    }
+
+    .play {
+        display: flex;
+        justify-content: space-around;
+        padding-top: 4rem;
+        .player_hand {
+            img {
+                height: 7rem;
+                border-radius: 4px;
+                border: 2px solid $orange;
+            }
+            img:hover {
+                transform: scale(0.9);
+            }
+        }
+
+        h2 {
+            color: $orange;
+            font-size: 3rem;
+
+        }
+        .computer_hand {
+            img {
+                height: 7rem;
+                border-radius: 4px;
+                border: 2px solid brown;
+                transform: rotateY(180deg);
+            }
+        }
+    }
+    .choose {
+        padding-top: 4rem;
+        display: flex;
+        justify-content: center;
+
+        button {
+            margin-left: 1rem;
+            height: 2.5rem;
+            width: 8rem;
+            border-radius: 3px;
+            background: $green;
+            color: white;
+            font-size: 1.3rem;
+            border: none;
+            cursor: pointer;
+        }
+        button:hover {
+            color: $green;
+            background: white;
+        }
+    }
+}
+
+
+.emerge {
+    opacity: 1;
+    pointer-events: all;
+    transition: 2s all ease;
+}
