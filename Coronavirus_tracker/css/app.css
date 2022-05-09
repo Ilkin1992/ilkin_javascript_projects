@@ -1,0 +1,143 @@
+* {
+    box-sizing: border-box;
+}
+
+:root {
+    --white: #e6e7d8;
+    --black: #0c0c0c;
+    --grey: #454444;
+    --green: #368b05;
+    --red: #bb0909;
+    --blue: #04335f;
+}
+
+body {
+    font-family: 'Fira Sans', sans-serif;
+    background-image: url(../img/img.jpg);
+    background-repeat: repeat;
+}
+
+.container {
+    display: flex;
+    gap: 5rem;
+    align-items: center;
+    justify-content: center;
+}
+
+
+.global_stats_container {
+    border: 1px solid var(--black);
+    border-radius: 10px;
+    padding: 1rem;
+    min-height: 16rem;
+    background: var(--white);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 5px 5px 5px var(--black);
+}
+
+
+.global_stats_header {
+    font-weight: bold;
+}
+
+
+.world_confirmed {
+    color: var(--blue);
+}
+
+
+.world_recovered {
+    color: var(--green);
+}
+
+
+.world_deaths {
+    color: var(--red);
+}
+
+
+.current_date_placeholder {
+    color: var(--grey);
+}
+
+
+.countries {
+    overflow-y: scroll;
+    height: 90vh;
+    display: block;
+    border: 1px solid var(--black);
+    border-radius: 10px;
+    background: var(--white);
+    margin-top: 1.5rem;
+}
+
+
+.countries_header {
+    padding-bottom: 1rem;
+    font-size: 1.3rem;
+}
+
+
+.countries_table {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+}
+
+
+.table_element {
+    cursor: pointer;
+    font-weight: bold;
+    color: var(--black);
+}
+
+
+.table_element:hover {
+    color: var(--grey);
+}
+
+
+.countries_individual_info {
+    min-height: 16rem;
+    min-width: 21rem;
+}
+
+
+.card {
+    border: 1px solid var(--black);
+    border-radius: 10px;
+    height: 100%;
+    width: 100%;
+    background: var(--white);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 5px 5px 5px var(--black);
+}
+
+
+.invisible {
+    display: none;
+    pointer-events: none;
+}
+
+/* For mobile devices */
+@media screen and (max-width: 1128px) {
+    .container {
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+
+    .countries {
+        height: 50vh;
+    }
+
+
+}
