@@ -1,4 +1,4 @@
-//Query Selectors 
+//Query Selectors
 const numberButtons = document.querySelectorAll('[data-number]');
 const operationButtons = document.querySelectorAll('[data-operation]');
 const equalsButton = document.querySelector('[data-equals]');
@@ -7,8 +7,6 @@ const allClearButton = document.querySelector('[data-all-clear]');
 const previousOperandTextElement = document.querySelector('[data-previous-operand]');
 const currentOperandTextElement = document.querySelector('[data-current-operand]');
 
-
-
 class Calculator {
     constructor(previousOperandTextElement, currentOperandTextElement) {
          this.previousOperandTextElement = previousOperandTextElement;
@@ -16,11 +14,9 @@ class Calculator {
          this.clear()
     }
 
-
     delete() {
     this.currentOperand = this.currentOperand.toString().slice(0, -1)
     }
-
 
     clear() {
         this.currentOperand = '';
@@ -28,13 +24,11 @@ class Calculator {
         this.operation = '';
         }
 
-    
     appendNumber(number) {
     if (number === '.' && this.currentOperand.includes('.')) return
     this.currentOperand = this.currentOperand.toString() + number.toString()
 
     }
-
 
     chooseOperation(operation) {
     if (this.currentOperand === '') return
@@ -46,9 +40,8 @@ class Calculator {
     this.currentOperand = '';
     }
 
-
     compute() {
-    let computation
+    let computation;
     const prev = parseFloat(this.previousOperand)
     const current = parseFloat(this.currentOperand)
     if (isNaN(prev) || isNaN(current)) return
@@ -74,7 +67,6 @@ class Calculator {
 
    }
 
-
     updateDisplay() {
     this.currentOperandTextElement.innerText = this.currentOperand;
     if (this.operation !== undefined) {
@@ -83,70 +75,68 @@ class Calculator {
    }
 }
 
-
-
 const calculator = new Calculator(previousOperandTextElement, currentOperandTextElement)
 
-//Number buttons 
+//Number buttons
 
 numberButtons.forEach((button) => {
     button.addEventListener('click', () => {
         calculator.appendNumber(button.innerText)
         calculator.updateDisplay()
-       
+
     })
 })
 
 document.addEventListener('keydown', event => {
    switch (event.key) {
-       case '0': 
+       case '0':
        calculator.appendNumber(0)
        calculator.updateDisplay()
        break;
-       case '1': 
+       case '1':
        calculator.appendNumber(1)
        calculator.updateDisplay()
        break;
-       case '2': 
+       case '2':
        calculator.appendNumber(2)
        calculator.updateDisplay()
        break;
-       case '3': 
+       case '3':
        calculator.appendNumber(3)
        calculator.updateDisplay()
        break;
-       case '4': 
+       case '4':
        calculator.appendNumber(4)
        calculator.updateDisplay()
        break;
-       case '5': 
+       case '5':
        calculator.appendNumber(5)
        calculator.updateDisplay()
        break;
-       case '6': 
+       case '6':
        calculator.appendNumber(6)
        calculator.updateDisplay()
        break;
-       case '7': 
+       case '7':
        calculator.appendNumber(7)
        calculator.updateDisplay()
        break;
-       case '8': 
+       case '8':
        calculator.appendNumber(8)
        calculator.updateDisplay()
        break;
-       case '9': 
+       case '9':
        calculator.appendNumber(9)
        calculator.updateDisplay()
        break;
-       case '.': 
+       case '.':
        calculator.appendNumber('.')
        calculator.updateDisplay()
        break;
    }
 })
 
-//Operation buttons 
+//Operation buttons
 
 operationButtons.forEach((button) => {
     button.addEventListener('click', () => {
@@ -176,9 +166,6 @@ document.addEventListener('keydown', event => {
     }
 })
 
-
-
-
 //Equals
 equalsButton.addEventListener('click', button => {
     calculator.compute();
@@ -204,7 +191,7 @@ document.addEventListener('keydown', event => {
     }
 })
 
-//Delete 
+//Delete
 deleteButton.addEventListener('click', button => {
     calculator.delete();
     calculator.updateDisplay();
@@ -216,4 +203,5 @@ document.addEventListener('keydown', event => {
         calculator.updateDisplay();
     }
 })
+
 

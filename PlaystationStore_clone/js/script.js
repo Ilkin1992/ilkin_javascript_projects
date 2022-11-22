@@ -24,7 +24,6 @@ const bottomNavbarLinks = document.querySelector(".bottom_navbar_links");
 //Make bottom navbar links visible on click
 toggleButton.addEventListener("click", () => {
   bottomNavbarLinks.classList.toggle("visible");
-  console.log(toggleButton);
 });
 
 //Navbar scrolldown animation

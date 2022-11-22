@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Minesweeper</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
+      integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="./css/style.css" />
+    <script defer src="./js/app.js"></script>
+  </head>
+  <body>
+    <div class="game_container">
+      <h1 class="title">Minesweeper</h1>
+      <div id="choose_difficulty" class="choose_difficulty">
+        <button id="easy" class="easy btn">Easy</button>
+        <button id="hard" class="hard btn">Hard</button>
+      </div>
+      <div id="game" class="game">
+        <div class="game_menu">
+          <h2 id="gameMessage">Test your luck!</h2>
+          <h2 id="gameWonMessage" class="invisible">You won! Congrats!</h2>
+          <h2 id="gameLostMessage" class="invisible">You lose!</h2>
+          <a id="restart" class="button invisible" href="#">Try again</a>
+        </div>
+        <div id="game_field" class="game_field"></div>
+      </div>
+    </div>
+  </body>
+</html>
