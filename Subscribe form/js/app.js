@@ -3,8 +3,6 @@ const emailInput = document.querySelector('.email_input');
 const icon = document.querySelector('.icon');
 const errorMessage = document.querySelector('.error_message');
 
-
-
 icon.addEventListener('click', () => {
   let value = emailInput.value;
   let lastTwo = value.slice(-2)
@@ -12,7 +10,7 @@ icon.addEventListener('click', () => {
   emailInput.classList.add('error');
   errorMessage.innerText = 'Please provide a valid email address'
   return
-  } 
+  }
   if (value === '') {
   emailInput.classList.add('error');
   errorMessage.innerText = 'Email is required';
@@ -25,10 +23,11 @@ icon.addEventListener('click', () => {
   }
   if (lastTwo === 'co') {
   emailInput.classList.add('error');
-  errorMessage.innerText = 'We are not accepting subscriptions from Colombian emails'; 
+  errorMessage.innerText = 'We are not accepting subscriptions from Colombian emails';
   return
   }
   else {
     window.location.href = "welcome_page.html";
   }
 })
+

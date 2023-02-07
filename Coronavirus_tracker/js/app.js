@@ -13,8 +13,6 @@ const countriesList = document.querySelector(".countries_table");
 const card = document.querySelector(".card");
 const today = new Date().toDateString();
 
-console.log(today);
-
 //Functions
 
 //Gets data from API and renders global stats

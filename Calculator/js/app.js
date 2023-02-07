@@ -27,7 +27,6 @@ class Calculator {
     appendNumber(number) {
     if (number === '.' && this.currentOperand.includes('.')) return
     this.currentOperand = this.currentOperand.toString() + number.toString()
-
     }
 
     chooseOperation(operation) {
@@ -78,12 +77,10 @@ class Calculator {
 const calculator = new Calculator(previousOperandTextElement, currentOperandTextElement)
 
 //Number buttons
-
 numberButtons.forEach((button) => {
     button.addEventListener('click', () => {
         calculator.appendNumber(button.innerText)
         calculator.updateDisplay()
-
     })
 })
 
@@ -137,7 +134,6 @@ document.addEventListener('keydown', event => {
 })
 
 //Operation buttons
-
 operationButtons.forEach((button) => {
     button.addEventListener('click', () => {
         calculator.chooseOperation(button.innerText)
