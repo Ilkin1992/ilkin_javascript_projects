@@ -1,0 +1,459 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --MainBlack: rgba(0, 0, 0, 0.9);
+    --mainWhite: #f5f5f5;
+    --MainGrey: #757575;
+    --DarkGrey: #363636;
+    --LightGrey: #ebe7e7;
+    --MainBlue: rgb(0, 112, 209);
+    --DarkBlue: rgb(10, 46, 77);
+    --CustomBlue: #003697;
+}
+
+body {
+    font-family: 'Lato', sans-serif;
+    font-weight: 300;
+}
+
+
+.upper_navbar {
+    background: black;
+    height: 36px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+.upper_navbar_sony {
+    color: var(--mainWhite);
+    cursor: pointer;
+    margin-right: 10px;
+}
+
+.middle_navbar {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    justify-content: space-between;
+    height: 3rem;
+    margin: auto;
+    background: var(--mainWhite);
+}
+
+.navbar_logo {
+    color: var(--MainBlue);
+    font-size: 1.5rem;
+    font-weight: 500;
+}
+
+.middle_navbar_links {
+    display: flex;
+    gap: 0.85rem;
+    margin-left: 1.5%;
+}
+
+.middle_navbar_links>li {
+    list-style: none;
+}
+
+.middle_navbar_links>li>a {
+    text-decoration: none;
+    color: var(--MainGrey);
+    cursor: pointer;
+    font-size: 0.81rem;
+    font-weight: bold;
+    line-height: 21px;
+    white-space: nowrap;
+    width: auto;
+    transition: 0.3s;
+}
+
+.middle_navbar_links>li>a:hover {
+    color: var(--MainBlue);
+}
+
+.signin_search {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    margin-right: 1.25%;
+}
+
+.signin_button {
+    background: var(--DarkGrey);
+    color: var(--mainWhite);
+    font-weight: bold;
+    font-size: 1rem;
+    border: none;
+    padding: 0.2rem;
+    border-radius: 20px;
+    cursor: pointer;
+    width: 6rem;
+}
+
+.signin_button:hover {
+    background: var(--MainGrey);
+}
+
+.search_button {
+    cursor: pointer;
+    font-size: 1.2rem;
+}
+
+.search_button:hover {
+    color: var(--MainBlue);
+}
+
+.bottom_navbar {
+    height: 64px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    position: fixed;
+    top: 5.2rem;
+    z-index: 1;
+    justify-content: flex-start;
+    background: var(--mainWhite);
+    border-bottom: 1px solid white;
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1),
+        0 4px 6px -4px rgba(0, 0, 0, 0.1);
+    transition: top 0.2s linear;
+}
+
+.playstation_store_logo {
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+    cursor: pointer;
+    flex: 1;
+    margin-left: 1.4%;
+}
+
+#logo2 {
+    color: var(--mainWhite);
+    background: var(--MainBlue);
+    padding: 3px;
+    border-radius: 5px;
+}
+
+.playstation_store_logo>h2 {
+    font-size: 1.2rem;
+    font-weight: 400;
+}
+
+.playstation_store_logo>h2>span {
+    font-weight: 700;
+}
+
+
+#toggle {
+    font-size: 2rem;
+    color: var(--DarkGrey);
+    display: none;
+}
+
+
+.bottom_navbar_links {
+    display: flex;
+    gap: 2rem;
+    flex: 2;
+}
+
+.bottom_navbar_links>li {
+    list-style: none;
+}
+
+.bottom_navbar_links>li>a {
+    text-decoration: none;
+    color: black;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.bottom_navbar_links>li>a:hover {
+    background: var(--LightGrey);
+    outline: solid 6px var(--LightGrey);
+    border-radius: 12px;
+}
+
+.main_image_container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 30.5rem;
+    margin-top: 4rem;
+}
+
+.main_image {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.black_card {
+    background-color: var(--MainBlack);
+    height: 25rem;
+    max-width: 25rem;
+    position: absolute;
+    color: var(--mainWhite);
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    padding: 2rem;
+}
+
+.black_card>h1 {
+    font-size: 2.5rem;
+}
+
+.black_card>h1>span {
+    padding-left: 4.5rem;
+}
+
+.black_card>p {
+    font-size: 1.3rem;
+    font-weight: 200;
+    line-height: 1.45;
+    color: var(--MainGrey);
+    text-indent: 1rem;
+}
+
+.black_card>button {
+    font-size: 0.9rem;
+    font-weight: bold;
+    padding: 0.6rem;
+    border-radius: 15px;
+    cursor: pointer;
+    border: 1px solid var(--MainBlack);
+}
+
+.black_card>button:hover {
+    outline: solid 2px var(--LightGrey);
+}
+
+.title_container {
+    width: 90%;
+    max-width: 90rem;
+    margin: auto;
+}
+
+.new_games_title {
+    color: var(--MainBlack);
+    font-size: 2.4rem;
+    font-weight: 100;
+    margin-top: 3rem;
+    margin-bottom: 3rem;
+}
+
+.games_counter {
+    color: var(--MainGrey);
+}
+
+.games_container {
+    width: 90%;
+    max-width: 90rem;
+    margin: auto;
+    margin-top: 4rem;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 4rem 0.5rem;
+}
+
+.game_card {
+    height: 12rem;
+    width: 12rem;
+}
+
+.game_card_img {
+    height: 100%;
+    width: 100%;
+    border-radius: 10px;
+}
+
+.game_card_img:hover {
+    border: 2.5px solid var(--DarkBlue);
+    opacity: 0.9;
+}
+
+.game_card_img>img {
+    height: 100%;
+    width: 100%;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.game_card_text {
+    font-size: 1.2rem;
+    font-weight: 100;
+    margin-top: 4.5px;
+    text-align: left;
+    cursor: pointer;
+}
+
+.pagination_container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1.5rem;
+    margin-top: 5rem;
+}
+
+.pagination_button {
+    cursor: pointer;
+    height: 1rem;
+    width: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem;
+    background-color: var(--MainGrey);
+    color: var(--mainWhite);
+    border: none;
+    border-radius: 50%;
+}
+
+.active,
+.pagination_button:hover {
+    background-color: var(--LightGrey);
+    color: var(--DarkGrey);
+}
+
+
+footer {
+    background-color: var(--CustomBlue);
+    margin-top: 5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 2.5rem;
+}
+
+.region {
+    display: flex;
+    gap: 2rem;
+    align-items: center;
+    margin-top: 3rem;
+    margin-left: 6%;
+    color: var(--mainWhite);
+    font-weight: lighter;
+}
+
+.footer_logo {
+    font-size: 2.5rem;
+}
+
+.footer_links {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    align-items: flex-start;
+    margin-left: 6%;
+}
+
+.footer_links>.list>li {
+    list-style: none;
+}
+
+.footer_links>.list>li>a {
+    text-decoration: none;
+    color: var(--mainWhite);
+    line-height: 2.5rem;
+}
+
+.disclaimer {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--mainWhite);
+    margin-bottom: 3rem;
+    gap: 5rem;
+}
+
+.disclaimer>h4 {
+    font-weight: 100;
+}
+
+
+.disclaimer>img {
+    height: 3rem;
+    cursor: pointer;
+    background-position: center;
+    object-fit: cover;
+}
+
+.invisible {
+    display: none;
+    pointer-events: none;
+}
+
+.scroll_active {
+    top: 0;
+}
+
+
+@media screen and (max-width: 1100px) {
+    .games_container {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 2rem;
+    }
+
+}
+
+@media screen and (max-width: 1000px) {
+
+    .bottom_navbar {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+    }
+
+    #toggle {
+        display: block;
+        cursor: pointer;
+    }
+
+    .bottom_navbar_links {
+        display: none;
+        pointer-events: none;
+    }
+
+    .visible {
+        display: flex;
+        pointer-events: all;
+        flex-direction: column;
+        margin-top: 1.5rem;
+        margin-left: 1rem;
+        background: var(--mainWhite);
+        border-radius: 10px;
+        padding-left: 2rem;
+        padding-bottom: 2rem;
+    }
+
+}
+
+@media screen and (max-width: 700px) {
+    .games_container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .signin_search {
+        display: none;
+    }
+
+    .footer_links {
+        display: flex;
+        flex-direction: column;
+        gap: 3rem;
+    }
+
+}

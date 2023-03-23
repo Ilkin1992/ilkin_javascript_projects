@@ -1,0 +1,142 @@
+[
+  {
+    "title": "The last of us",
+    "price": 24,
+    "genre": "casual",
+    "platform": "ps5",
+    "release": "Just released"
+  },
+  {
+    "title": "Construction simulator",
+    "price": "free",
+    "genre": "puzzle",
+    "platform": "ps4",
+    "release": "Coming soon"
+  },
+  {
+    "title": "Cowabunga",
+    "price": 5,
+    "genre": "casual",
+    "platform": "ps4",
+    "release": "Coming soon"
+  },
+  {
+    "title": "Pathfinder",
+    "price": 30,
+    "genre": "adventure",
+    "platform": "ps5",
+    "release": "Coming soon"
+  },
+  {
+    "title": "Metal Helsinger",
+    "price": 22,
+    "genre": "action",
+    "platform": "ps5",
+    "release": "Just released"
+  },
+  {
+    "title": "Steel Rising",
+    "price": "free",
+    "genre": "casual",
+    "platform": "ps4",
+    "release": "Coming soon"
+  },
+  {
+    "title": "New Genesis",
+    "price": 16,
+    "genre": "adventure",
+    "platform": "ps4",
+    "release": "Coming soon"
+  },
+  {
+    "title": "Various Daylife",
+    "price": 21,
+    "genre": "puzzle",
+    "platform": "ps5",
+    "release": "Coming soon"
+  },
+  {
+    "title": "Nhra",
+    "price": 18,
+    "genre": "simulator,",
+    "platform": "ps4",
+    "release": "Just released"
+  },
+  {
+    "title": "Saints Row",
+    "price": "free",
+    "genre": "adventure",
+    "platform": "ps5",
+    "release": "Just released"
+  },
+  {
+    "title": "Jojos",
+    "price": "free",
+    "genre": "role playing",
+    "platform": "ps4",
+    "release": "Just released"
+  },
+  {
+    "title": "Solu Hackers",
+    "price": 9,
+    "genre": "simulator",
+    "platform": "ps4",
+    "release": "Just released"
+  },
+  {
+    "title": "Dreamlight Valley",
+    "price": 15,
+    "genre": "role playing",
+    "platform": "ps5",
+    "release": "Coming soon"
+  },
+  {
+    "title": "Destroy all humans",
+    "price": 32,
+    "genre": "simulator",
+    "platform": "ps5",
+    "release": "Coming soon"
+  },
+  {
+    "title": "Tunic",
+    "price": 18,
+    "genre": "adventure",
+    "platform": "ps5",
+    "release": "Coming soon"
+  },
+  {
+    "title": "Inscryption",
+    "price": 14,
+    "genre": "adventure",
+    "platform": "ps5",
+    "release": "Just released"
+  },
+  {
+    "title": "F manager",
+    "price": 34,
+    "genre": "simulator",
+    "platform": "ps5",
+    "release": "Coming soon"
+  },
+  {
+    "title": "Gundam",
+    "price": 4,
+    "genre": "casual",
+    "platform": "ps5",
+    "release": "Coming soon"
+  },
+  {
+    "title": "Izonzo",
+    "price": "free",
+    "genre": "casual",
+    "platform": "ps4",
+    "release": "Just released"
+  },
+  {
+    "title": "NBA 2023",
+    "price": 35,
+    "genre": "simulator",
+    "platform": "ps5",
+    "release": "Coming soon"
+  }
+]
