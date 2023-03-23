@@ -1,0 +1,157 @@
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Akshar', sans-serif;
+}
+
+img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+
+
+:root {
+    --clr-icons: #929292;
+    --clr-text: #242424;
+    --clr-text-lighter: #3b3b3b;
+    --clr-accent: #ff7600;
+    --clr-error: #9c1212;
+}
+
+.main_container {
+    margin: 0;
+    padding: 0;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    position: absolute;
+    white-space: nowrap;
+    height: 40.8rem;
+}
+
+
+.container_left {
+    padding: 1rem;
+    display: grid;
+    grid-template-rows: 15% 85%;
+}
+
+header {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.logo {
+    flex: 1;
+}
+
+.logo_txt {
+    color: var(--clr-text);
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+.logo_span {
+    color: var(--clr-accent);
+}
+
+.logo_txt:hover {
+    font-size: 1.6em;
+}
+
+.links {
+    display: flex;
+    flex: 1;
+    justify-content: space-around;
+}
+
+.links>li {
+    list-style: none;
+}
+
+.links>li>a {
+    text-decoration: none;
+    color: var(--clr-text);
+}
+
+.links>li>a:hover {
+    color: var(--clr-accent);
+}
+
+.subscribe {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+
+.email_input {
+    padding: 0.1rem;
+    height: 2rem;
+    width: 15rem;
+    color: var(--clr-text);
+}
+
+.icon {
+    color: var(--clr-text);
+    cursor: pointer;
+}
+
+.error_message {
+    color: var(--clr-error);
+    padding-top: 0.5rem;
+}
+
+.icons {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.fa-brands {
+    color: var(--clr-text-lighter);
+    font-size: 1.5rem;
+    transition: 0.3s ease-in-out;
+}
+
+.fa-brands:hover {
+    color: #ff7600;
+    font-size: 1.8rem;
+}
+
+@media screen and (max-width: 700px) {
+
+    .links>li>a {
+        padding-left: 0.5rem;
+    }
+
+    .subscribe {
+        border: 1px solid #242424;
+        border-radius: 10px;
+        padding: 1rem;
+        background: white;
+        align-self: center;
+    }
+
+    .container_left {
+        justify-content: center;
+    }
+
+    .container_right {
+        grid-column: span 2;
+        z-index: -1;
+        position: absolute;
+        top: 8rem;
+    }
+
+    .icons {
+        padding-top: 1rem;
+    }
+
+}
