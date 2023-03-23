@@ -1,0 +1,78 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background: linear-gradient(to bottom, #3c4452 0%, #2a476b 100%);
+    height: 100vh;
+    font-family: 'Nerko One', cursive;
+};
+
+.container { 
+    height: 20vh;
+    width: 50vw;
+    text-align: center;
+    padding: 5%;
+};
+
+form {
+    display: flex;
+};
+
+.todo_box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 50px;
+};
+
+.todo_list {
+    min-width: 30%;
+    list-style: none;
+};
+
+.todo {
+    display: flex;
+    margin: 0.5rem;
+    background: white;
+    color: black;
+    font-size: 1.5rem;
+    justify-content: space-between;
+    align-items: center; 
+    transition: all 0.8s ease;
+    
+    .todo_item {
+        flex: 1;
+    }
+    
+    .completed_button {
+        width: 30px;
+        background-color: #0c7526;
+        border: none;
+    }
+    
+    .remove_button {
+        width: 30px;
+        background-color: #c90004;
+        border: none;
+    }
+};
+
+.completed {
+    text-decoration: line-through;
+    opacity: 0.5;
+};
+
+.fall {
+    transform: translateY(8rem) rotateY(40deg);
+    opacity: 0;
+}
+
+.custom-select {
+    height: 100%;
+    width: 6rem;
+    background-color: #1a1719;
+    border: none;
+}
+
