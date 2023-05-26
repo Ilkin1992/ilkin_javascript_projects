@@ -16,7 +16,7 @@ function App() {
           <Todo
             key={todo.id}
             id={todo.id}
-            todo={todo}
+            todo={todo} 
             text={todo.text}
             deleteTodo={deleteTodo}
           />

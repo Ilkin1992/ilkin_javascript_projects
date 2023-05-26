@@ -7,11 +7,11 @@ export const TodoProvider = ({ children }) => {
   const [todos, setTodos] = useState([]);
 
   useEffect(() => {
-    fetchFeedback();
+    fetchTodos();
   }, []);
 
   //Fetch todos
-  const fetchFeedback = async () => {
+  const fetchTodos = async () => {
     const response = await fetch("http://localhost:5000/todos");
     const data = await response.json();
     setTodos(data);
